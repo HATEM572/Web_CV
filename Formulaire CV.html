@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulaire CV</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Ajoutez ici votre propre style CSS personnalisé si nécessaire */
+    body {
+      background-color: #add8e6; /* Bleu ciel pour le fond du site */
+    }
+    .card {
+      background-color: white; /* Fond blanc pour les rubriques */
+    }
+    #preview {
+      max-width: 100%;
+      max-height: 200px;
+      margin-top: 10px;
+    }
+    .user-icon {
+      width: 50px;
+      height: 50px;
+    }
+    .langues .progress {
+      margin-bottom: 0; /* Enlever la marge en bas de la barre de progression dans la rubrique Langues */
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="jumbotron text-center">
+    <h1 class="display-4">Curriculum Vitae</h1>
+    <img src="https://cdn-icons-png.flaticon.com/512/194/194938.png" class="user-icon" alt="User Icon"> <!-- Icône utilisateur -->
+  </div>
+
+  <div id="accordion">
+
+    <!-- Rubrique 1 - Informations personnelles -->
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h5 class="mb-0">
+          <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Informations Personnelles
+          </button>
+        </h5>
+      </div>
+
+      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="photo">Photo:</label>
+                <input type="file" class="form-control-file" id="photo" onchange="previewImage(event)">
+              </div>
+              <div id="imagePreview" class="mt-2"></div>
+              <div class="form-group">
+                <label for="nom">Nom:</label>
+                <input type="text" class="form-control" id="nom">
+              </div>
+              <div class="form-group">
+                <label for="prenom">Prénom:</label>
+                <input type="text" class="form-control" id="prenom">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <!-- Image affichée ici -->
+              <img id="preview" src="#" alt="Votre image s'affichera ici" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rubrique 2 - Expériences professionnelles -->
+    <div class="card">
+      <div class="card-header" id="headingTwo">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Expériences Professionnelles
+          </button>
+        </h5>
+      </div>
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+        <div class="card-body">
+          <div class="form-group">
+            <label for="experience1">Expérience 1:</label>
+            <input type="text" class="form-control" id="experience1">
+          </div>
+          <div class="form-row">
+            <div class="col">
+              <label for="dateDebut1">Date de début:</label>
+              <input type="date" class="form-control" id="dateDebut1">
+            </div>
+            <div class="col">
+              <label for="dateFin1">Date de fin:</label>
+              <input type="date" class="form-control" id="dateFin1">
+            </div>
+          </div>
+          <hr>
+          <div class="form-group">
+            <label for="experience2">Expérience 2:</label>
+            <input type="text" class="form-control" id="experience2">
+          </div>
+          <div class="form-row">
+            <div class="col">
+              <label for="dateDebut2">Date de début:</label>
+              <input type="date" class="form-control" id="dateDebut2">
+            </div>
+            <div class="col">
+              <label for="dateFin2">Date de fin:</label>
+              <input type="date" class="form-control" id="dateFin2">
+            </div>
+          </div>
+          <hr>
+          <div class="form-group">
+            <label for="experience3">Expérience 3:</label>
+            <input type="text" class="form-control" id="experience3">
+          </div>
+          <div class="form-row">
+            <div class="col">
+              <label for="dateDebut3">Date de début:</label>
+              <input type="date" class="form-control" id="dateDebut3">
+            </div>
+            <div class="col">
+              <label for="dateFin3">Date de fin:</label>
+              <input type="date" class="form-control" id="dateFin3">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rubrique 3 - Diplômes académiques -->
+    <div class="card">
+      <div class="card-header" id="headingThree">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Diplômes Académiques
+          </button>
+        </h5>
+      </div>
+      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+        <div class="card-body">
+          <div class="form-group">
+            <label for="diplome1">Diplôme 1:</label>
+            <input type="text" class="form-control" id="diplome1">
+          </div>
+          <div class="form-row">
+            <div class="col">
+              <label for="dateObtention1">Date d'obtention:</label>
+              <input type="date" class="form-control" id="dateObtention1">
+            </div>
+          </div>
+          <hr>
+          <div class="form-group">
+            <label for="diplome2">Diplôme 2:</label>
+            <input type="text" class="form-control" id="diplome2">
+          </div>
+          <div class="form-row">
+            <div class="col">
+              <label for="dateObtention2">Date d'obtention:</label>
+              <input type="date" class="form-control" id="dateObtention2">
+            </div>
+          </div>
+          <hr>
+          <div class="form-group">
+            <label for="diplome3">Diplôme 3:</label>
+            <input type="text" class="form-control" id="diplome3">
+          </div>
+          <div class="form-row">
+            <div class="col">
+              <label for="dateObtention3">Date d'obtention:</label>
+              <input type="date" class="form-control" id="dateObtention3">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rubrique 4 - Langues -->
+    <div class="card langues">
+      <div class="card-header" id="headingFour">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+            Langues
+          </button>
+        </h5>
+      </div>
+      <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+        <div class="card-body">
+          <div class="form-group">
+            <label for="langue1">Langue 1:</label>
+            <input type="text" class="form-control" id="langue1">
+            <input type="range" class="form-control-range" id="niveauLangue1" min="1" max="7">
+          </div>
+          <hr>
+          <div class="form-group">
+            <label for="langue2">Langue 2:</label>
+            <input type="text" class="form-control" id="langue2">
+            <input type="range" class="form-control-range" id="niveauLangue2" min="1" max="7">
+          </div>
+          <hr>
+          <div class="form-group">
+            <label for="langue3">Langue 3:</label>
+            <input type="text" class="form-control" id="langue3">
+            <input type="range" class="form-control-range" id="niveauLangue3" min="1" max="7">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Boutons Envoyer et Annuler -->
+  <div class="text-center mt-4">
+    <button type="button" class="btn btn-envoyer mr-2">Envoyer</button>
+    <button type="button" class="btn btn-annuler">Annuler</button>
+  </div>
+
+</div>
+
+<script>
+  function previewImage(event) {
+    var reader = new FileReader();
+    reader.onload = function(){
+      var output = document.getElementById('preview');
+      output.src = reader.result;
+    }
+    reader.readAsDataURL(event.target.files[0]);
+  }
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
